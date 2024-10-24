@@ -8,39 +8,68 @@
     <script src="myscript.js" defer></script>
 </head>
 <body>
-    <header>
-        <div>
-            <h1>Library</h1>
-            <img src="" alt="">
+        <header>
+            <div>
+                <h1>Library</h1>
+                <img src="" alt="">
+            </div>
+            <p>Welcome to your library where you can
+                track and manage you book collection
+            </p>
+        </header>
+
+    <div class="button-container">
+        <button class="create-book" value="button" type="button">New Book</button>
+    </div>
+
+    <div class="overlay">
+        <form action="#">
+            <div class="form-row">
+                <label for="title">Book title</label>
+                <input type="text"
+                        id="title"
+                        name="title">
+            </div>
+            <div class="form-row">
+                <label for="author">Author name</label>
+                <input type="text" id="author"
+                        name="author">
+            </div>
+            <div class="form-row">
+                <label for="pages">Number of pages</label>
+                <input type="text" id="pages"
+                        name="pages">
+            </div>
+            <fieldset>
+                <input type="checkbox"
+                        id="read"
+                        name="read">
+                <label for="read">Read</label>
+            </fieldset>
+            <div class="button-container">
+                <button type="submit" class="submit-book">Add</button>
+            </div>
+        </form>
+    </div>
+        
+    <div class="books-container">
+        <div class="card">
+            <p>Book:</p>
+            <p>Author:</p>
+            <p>Pages:</p>
+            <p>Status:</p>
+            <button>Change Status</button>
+            <button>Delete Card</button>
         </div>
-        <p>Welcome to your library where you can 
-            track and manage you book collection
-        </p>
-    </header>
-
-    <button class="create-book" value="button" type="button">New Book</button>
-
-    <form action="#">
-        <div class="form-row">
-            <label for="author">Author name</label>
-            <input type="text" id="author"
-                    name="author">
+        <div class="card">
+            <p>Book:</p>
+            <p>Author:</p>
+            <p>Pages:</p>
+            <p>Status:</p>
+            <button class="change-status-btn">Change Status</button>
+            <button class="delete-card-btn">Delete Card</button>
         </div>
-        <div class="form-row">
-            <label for="pages">Number of pages</label>
-            <input type="text" id="pages"
-                    name="pages">
-        </div>
-        <fieldset>
-            <input type="checkbox"
-                    id="read"
-                    name="read">
-            <label for="read">Read</label>
-        </fieldset>
-
-        <button type="submit" class="submit-book">Add</button>
-    </form>
-
+    </div>
 
 </body>
 </html>
