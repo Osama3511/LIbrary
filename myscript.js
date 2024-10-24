@@ -9,7 +9,13 @@ function Book(title, author, pages, read){
 
 const cardContainer = document.querySelector(".books-container");
 function addBookToLibrary(){
+    let index = myLibrary.length - 1;
+    const book = myLibrary[index];
+
+
     const card = document.createElement('div');
+    card.setAttribute("data",`${index}`);
+
     const bookName = document.createElement('p');
     const authorName = document.createElement('p');
     const pagesNum = document.createElement('p');
@@ -23,7 +29,6 @@ function addBookToLibrary(){
     changeStatus.textContent = "Change Status";
     deleteCard.textContent = "Delete Card";
     
-    const book = myLibrary.pop();
 
     bookName.textContent = "Book: " + book.title;
     authorName.textContent = "Author: " + book.author;
@@ -32,12 +37,19 @@ function addBookToLibrary(){
 
     changeStatus.addEventListener('click',() => {
         if(checkRead.textContent === "Status: read"){
-            checkRead.textContent = "Status: haven't read";
+            book.read = "haven't read";
+            checkRead.textContent = "Status: " + book.read;
         }
         else{
-            checkRead.textContent = "Status: read";
+            book.read = "read";
+            checkRead.textContent = "Status:" + book.read;
         }
-    });     
+    });
+
+    deleteCard.addEventListener('click', () => {
+        myLibrary.splice(index, 1);
+        card.remove();
+    });
 
     card.appendChild(bookName);
     card.appendChild(authorName);
@@ -61,6 +73,7 @@ function createBook() {
 }
 
 function resetForm() {
+    document.querySelector("#title").value = '';
     document.querySelector("#author").value = '';
     document.querySelector("#pages").value = '';
     document.querySelector("#read").checked = false;
@@ -86,3 +99,11 @@ submitBtn.addEventListener('click', (e) => {
     addBookToLibrary();
 })
 
+
+
+document.querySelector(".close-btn").addEventListener('click',() => {
+    const form = document.querySelector("form");
+    const overlay = document.querySelector(".overlay");
+    overlay.style.display = "none"
+    form.style.display = "none";
+});

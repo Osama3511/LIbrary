@@ -9,6 +9,8 @@
     --font-size: 16px;
     --form-bg-color: #374151; 
     --text-color: #ffffff;
+    --btn-bg-color: #94a3b8;
+    --btn-hover-color: #cbd5e1;
 }
 
 body {
@@ -28,7 +30,7 @@ header {
     align-items: center;
     padding: 16px;
     font-size: var(--font-size);
-    box-shadow: 0 4px #94a3b8;
+    box-shadow: 0 4px var(--btn-bg-color);
 }
 
 .button-container,
@@ -51,6 +53,25 @@ form {
     box-shadow: 8px 8px #020617;
 }
 
+.form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.close-btn{
+    margin-left: 275px;
+    padding: 4px;
+    border-radius: 5px;
+    border: none;
+}
+
+.close-btn > img {
+    height: 15px;
+    width: 15px;
+}
+
 .overlay {
     position: fixed;
     left: 0;
@@ -63,7 +84,7 @@ form {
 }
 
 form input{
-    background-color: #94a3b8;
+    background-color: var(--btn-bg-color);
     border: 1px solid white;
     border-radius: 3px;
 }
@@ -75,16 +96,16 @@ fieldset {
 .card button,
 .create-book,
 .submit-book {
-    background-color: #94a3b8;
+    background-color: var(--btn-bg-color);
     padding: 4px 32px;
     border-radius: 8px;
-    border: #cbd5e1;
+    border: var(--btn-hover-color);
     font-size: 14px;
 }
 
 .card button:hover,
 .submit-book:hover {
-    background-color: #cbd5e1;
+    background-color: var(--btn-hover-color);
     cursor: pointer;
 }
 
@@ -95,7 +116,7 @@ fieldset {
 }
 
 .create-book:hover {
-    background-color: #94a3b8;
+    background-color: var(--btn-bg-color);
     cursor: pointer;
 }
 
