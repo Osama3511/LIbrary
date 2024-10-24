@@ -87,6 +87,8 @@ form input{
     background-color: var(--btn-bg-color);
     border: 1px solid white;
     border-radius: 3px;
+    padding: 8px;
+    font-size: 16px;
 }
 
 fieldset {
