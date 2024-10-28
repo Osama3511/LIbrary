@@ -1,10 +1,11 @@
 const myLibrary = [];
-
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 const cardContainer = document.querySelector(".books-container");
@@ -67,7 +68,7 @@ function createBook() {
     const form = document.querySelector("form");
     const overlay = document.querySelector(".overlay");
     resetForm();
-    overlay.style.display = "block";
+    overlay.style.display = "flex";
     form.style.display = "flex";
     
 }
